@@ -6,24 +6,14 @@
 
 int main() {
     Trie *root = Trie_init();
-    int arr[] = {7, 1, 9, 5, 2};
+    Trie *json = Trie_init();
 
-    DB_addNumber(root, "num", 77);
-    DB_addString(root, "string", "Anny");
-    DB_addBoolean(root, "bool", 0);
-    DB_addRaw(root, "arr", arr, sizeof(int) * 5);
+    DB_addDB(root, "json", json);
+    DB_addString(json, "kek", "I am fake json");
 
-    printf("num = %d\n", *(int*) DB_getType(root, "num")->value);
-    printf("string = %s\n", (char*) DB_getType(root, "string")->value);
-    printf("bool = %d\n", *(short*) DB_getType(root, "bool")->value);
-
-    Types *type = DB_getType(root, "arr");
-    if (type->type == RAW) {
-        int *arr = type->value;
-        for (int i = 0; i < type->size / sizeof(int); i++) {
-            printf("arr[%d] = %d\n", i, arr[i]);
-        }
+    Types *child = DB_getType(root, "json");
+    if (child->type == DB) {
+        printf("%s\n", (char*) DB_getType(child->value, "kek")->value);
     }
-
     return 0;
 }

@@ -48,6 +48,15 @@ void DB_addRaw(Trie *tree, char *name, void *data, size_t length) {
     Trie_addNode(tree, name, type, sizeof(Types));
 }
 
+void DB_addDB(Trie *tree, char *name, Trie *child) {
+    Types *type = malloc(sizeof(Types));
+    memset(type, 0, sizeof(Types));
+    type->type = DB;
+    type->size = 0;
+    type->value = child;
+    Trie_addNode(tree, name, type, sizeof(Types));
+}
+
 Types *DB_getType(Trie *tree, char *name) {
     return Trie_getNode(tree, name);
 }

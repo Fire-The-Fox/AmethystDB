@@ -21,6 +21,10 @@ void setRaw(Trie *tree, char* key, void *data, unsigned long size) {
     DB_addRaw(tree, key, data, size);
 }
 
+void setDB(Trie *tree, char *key, Trie *child) {
+    DB_addDB(tree, key, child);
+}
+
 DBResult getValue(Trie *tree, char *key) {
     DBResult res = {};
 
@@ -47,6 +51,9 @@ DBResult getValue(Trie *tree, char *key) {
         case RAW:
             res.val.r = val->value;
             break;
+        case DB:
+            res.val.t = val->value;
+            break;
     }
 
     return res;
@@ -66,4 +73,8 @@ short getBoolean(Trie *tree, char *key) {
 
 void *getRaw(Trie *tree, char *key) {
     return getValue(tree, key).val.r;
+}
+
+Trie *getDB(Trie *tree, char *key) {
+    return getValue(tree, key).val.t;
 }
