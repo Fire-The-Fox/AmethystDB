@@ -1,20 +1,29 @@
 #include <stdio.h>
+#include <time.h>
 
 #include "trie/src/trie.h"
+#include "types/src/types.h"
 
 int main() {
     Trie *root = Trie_init();
-    int d = 77;
-    Trie_addNode(root, "hello", &d, sizeof(int));
-    d = 50;
-    Trie_addNode(root, "hell", &d, sizeof(int));
-    d = 10;
-    Trie_addNode(root, "help", &d, sizeof(int));
+    int arr[] = {7, 1, 9, 5, 2};
 
-    printf("d1 = %d\n", *(int*) Trie_getNode(root, "hello"));
-    printf("d1 = %d\n", *(int*) Trie_getNode(root, "hell"));
-    printf("d1 = %d\n", *(int*) Trie_getNode(root, "help"));
+    DB_addNumber(root, "num", 77);
+    DB_addString(root, "string", "Anny");
+    DB_addBoolean(root, "bool", 0);
+    DB_addRaw(root, "arr", arr, sizeof(int) * 5);
 
-    printf("Should be nil %p\n", Trie_getNode(root, "xhellp"));
+    printf("num = %d\n", *(int*) DB_getType(root, "num")->value);
+    printf("string = %s\n", (char*) DB_getType(root, "string")->value);
+    printf("bool = %d\n", *(short*) DB_getType(root, "bool")->value);
+
+    Types *type = DB_getType(root, "arr");
+    if (type->type == RAW) {
+        int *arr = type->value;
+        for (int i = 0; i < type->size / sizeof(int); i++) {
+            printf("arr[%d] = %d\n", i, arr[i]);
+        }
+    }
+
     return 0;
 }

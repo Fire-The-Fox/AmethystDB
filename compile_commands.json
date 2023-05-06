@@ -1,0 +1,26 @@
+[
+{
+  "directory": "/home/jani/devel/c/amethyst/build",
+  "command": "/usr/bin/cc -std=gnu11 -o CMakeFiles/test.dir/test.c.o -c /home/jani/devel/c/amethyst/test.c",
+  "file": "/home/jani/devel/c/amethyst/test.c",
+  "output": "CMakeFiles/test.dir/test.c.o"
+},
+{
+  "directory": "/home/jani/devel/c/amethyst/build",
+  "command": "/usr/bin/cc -Dcore_EXPORTS -std=gnu11 -fPIC -o CMakeFiles/core.dir/core.c.o -c /home/jani/devel/c/amethyst/core.c",
+  "file": "/home/jani/devel/c/amethyst/core.c",
+  "output": "CMakeFiles/core.dir/core.c.o"
+},
+{
+  "directory": "/home/jani/devel/c/amethyst/build",
+  "command": "/usr/bin/cc -std=gnu11 -o trie/CMakeFiles/trie.dir/src/trie.c.o -c /home/jani/devel/c/amethyst/trie/src/trie.c",
+  "file": "/home/jani/devel/c/amethyst/trie/src/trie.c",
+  "output": "trie/CMakeFiles/trie.dir/src/trie.c.o"
+},
+{
+  "directory": "/home/jani/devel/c/amethyst/build",
+  "command": "/usr/bin/cc -std=gnu11 -o types/CMakeFiles/types.dir/src/types.c.o -c /home/jani/devel/c/amethyst/types/src/types.c",
+  "file": "/home/jani/devel/c/amethyst/types/src/types.c",
+  "output": "types/CMakeFiles/types.dir/src/types.c.o"
+}
+]
