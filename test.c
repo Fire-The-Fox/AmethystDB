@@ -15,5 +15,8 @@ int main() {
     if (child->type == DB) {
         printf("%s\n", (char*) DB_getType(child->value, "kek")->value);
     }
+
+    DB_free(json);
+    DB_free(root);
     return 0;
 }

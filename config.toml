@@ -1,0 +1,10 @@
+[output]
+# when dumping the entire DB as string, the output format needs to be specified
+# simple -> prints the DB as follows KEY=VALUE (default)
+# json -> prints the DB as JSON
+format = "simple"
+
+[output.raw]
+# raw -> prints RAW data onto the screen as characters (default)
+# array -> prints RAW data onto the screen as unsigned char array, every number has comma as delimiter
+method = "raw"

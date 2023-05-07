@@ -36,5 +36,6 @@ void DB_addBoolean(Trie *tree, char *name, short val);
 void DB_addRaw(Trie *tree, char *name, void *data, size_t length);
 void DB_addDB(Trie *tree, char *name, Trie *child);
 Types *DB_getType(Trie *tree, char *name);
+void DB_free(Trie *tree);
 
 #endif
