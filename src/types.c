@@ -1,8 +1,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "../../trie/src/trie.h"
-#include "types.h"
+#include <trie.h>
+#include <types.h>
 
 void DB_addString(Trie *tree, char *name, char *str) {
     Types *type = malloc(sizeof(Types));

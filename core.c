@@ -1,5 +1,5 @@
-#include "trie/src/trie.h"
-#include "types/src/types.h"
+#include <trie.h>
+#include <types.h>
 
 Trie *createDB() {
     return Trie_init();

@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "trie.h"
+#include <trie.h>
 
 Trie *Trie_init() {
     Trie *t = malloc(sizeof(Trie));

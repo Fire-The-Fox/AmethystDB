@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <time.h>
 
-#include "trie/src/trie.h"
-#include "types/src/types.h"
+#include <trie.h>
+#include <types.h>
 
 int main() {
     Trie *root = Trie_init();

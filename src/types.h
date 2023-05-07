@@ -2,7 +2,7 @@
 #define _AMETHYST_TYPES_
 
 #include <stddef.h>
-#include "../../trie/src/trie.h"
+#include <trie.h>
 
 typedef enum {
     STRING,
